@@ -23,18 +23,25 @@ This project was created using HTML, CSS, JavaScript, NodeJS & Socket.io. This c
 - Run npm install & start.
 
 ```
-npm install && start
+npm install
+```
+```
+npm start
 ```
 
-- Open a new window or Incognito.
-- Enter localhost:5000
+- Open two windows or Incognito.
+- Enter localhost:5000 for each
 
 ## Help
 
-Any advise for common problems or issues.
+If live-server crashed run ctrl C
 
 ```
-command to run if program contains helper info
+^C
+```
+then run npm start in VS code terminal again.
+```
+npm start
 ```
 
 ## Author
