@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90.21deg, #081631 -5.91%, #2e0630 111.58%);
+}
+
+.app {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  /* background: #fff; */
+  /* border-left: 1px solid #eee;
+  border-right: 1px solid #eee; */
+}

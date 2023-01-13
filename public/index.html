@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/login-page.css" />
+    <link rel="stylesheet" href="./styles/chat-page.css" />
+    <link rel="stylesheet" href="./styles/emoji-picker.css" />
+
+    <title>Chat App</title>
+  </head>
+  <body>
+    <!-- Log In Page -->
+    <main class="app">
+      <section class="screen login-page active">
+        <div class="form">
+          <h2>Login</h2>
+          <div class="form-input">
+            <label
+              >Username:
+              <input type="text" id="username" placeholder="Enter username" />
+            </label>
+          </div>
+          <form class="form-input">
+            <button id="join-user">Join</button>
+          </form>
+        </div>
+      </section>
+      <!-- Chat Page -->
+      <section class="screen chat-page">
+        <div class="header">
+          <h1 class="logo">Chat App</h1>
+          <button id="exit-chat">Exit</button>
+        </div>
+        <div class="messages"></div>
+
+        <div class="typebox">
+          <!-- emoji container start -->
+          <div id="emoji-picker" class="emoji-picker-closed">
+            <div id="emoji-list"></div>
+          </div>
+          <button id="emoji-button">🙂</button>
+          <!-- emoji container end -->
+          <input type="text" id="message-input" placeholder="Message..." />
+          <button id="send-message">Send</button>
+        </div>
+      </section>
+    </main>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
+    <script src="./emoji-picker.js"></script>
+  </body>
+</html>
