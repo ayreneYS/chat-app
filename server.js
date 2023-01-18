@@ -1,21 +1,24 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
-const server = require('http').createServer(app);
+const http = require('http');
+const server = http.createServer(app);
 const io = require('socket.io')(server);
 
-app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
-io.on('connection', function (socket) {
-  socket.on('newuser', function (username) {
-    socket.broadcast.emit('update', username + ' joined the chat');
+io.on('connection', (socket) => {
+  socket.on('newuser', (username) => {
+    socket.broadcast.emit('update', `${username} joined the chat`);
   });
-  socket.on('exituser', function (username) {
-    socket.broadcast.emit('update', username + ' left the chat');
+  socket.on('exituser', (username) => {
+    socket.broadcast.emit('update', `${username} left the chat`);
   });
-  socket.on('chat', function (message) {
+  socket.on('chat', (message) => {
     socket.broadcast.emit('chat', message);
   });
 });
 
-server.listen(5000);
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
